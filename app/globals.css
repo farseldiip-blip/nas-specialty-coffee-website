@@ -12,3 +12,22 @@
 .menu-page main{background:var(--cream)}.menu-page[dir="rtl"] .menu-hero h1,.menu-page[dir="rtl"] .menu-group-heading h2{font-family:'IBM Plex Sans Arabic',sans-serif;font-weight:400}.menu-hero{min-height:45vh;padding:clamp(80px,13vw,170px) clamp(22px,9vw,145px) 70px;display:flex;align-items:flex-end;justify-content:space-between;gap:30px;background:#e4d7c8}.menu-hero h1{font:400 clamp(54px,9vw,128px)/1.02 Georgia,serif;max-width:750px;margin:24px 0 20px}.menu-hero p{font-size:clamp(17px,2vw,24px);max-width:420px;margin:0;color:var(--mocha)}.menu-index{font-size:10px;letter-spacing:.18em;align-self:flex-start;direction:ltr}.menu-list{padding:clamp(65px,9vw,125px) clamp(22px,6vw,100px)}.menu-group{margin-bottom:clamp(75px,11vw,150px)}.menu-group:last-child{margin-bottom:0}.menu-group-heading{display:grid;grid-template-columns:40px 1fr auto;align-items:center;gap:16px;margin-bottom:34px;border-bottom:1px solid rgba(30,22,18,.3);padding-bottom:15px}.menu-group-heading h2{font:400 clamp(32px,4vw,58px)/1.1 Georgia,serif;margin:0}.menu-group-heading small{font-size:11px;color:var(--mocha)}.menu-full-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.menu-footer{background:var(--espresso);color:var(--cream);padding:30px clamp(22px,6vw,100px);display:flex;align-items:center;justify-content:space-between;font-size:10px;letter-spacing:.13em;direction:ltr}
 @media(max-width:800px){.menu-hero{min-height:47vh;padding:72px 24px 42px;display:block}.menu-hero h1{font-size:58px;margin-top:20px}.menu-hero p{font-size:17px}.menu-index{display:block;margin-top:65px}.menu-list{padding:64px 18px}.menu-group-heading{grid-template-columns:25px 1fr;gap:10px}.menu-group-heading small{grid-column:2}.menu-full-grid{grid-template-columns:repeat(2,1fr);gap:10px}.menu-footer{padding:25px 18px;display:flex;flex-direction:column;align-items:flex-start;gap:18px}}
 @media(max-width:380px){.hero h1{font-size:44px}.hero-photo{min-height:350px}.section{padding-inline:18px}}
+
+/* NAS button system: quiet geometry, clear hierarchy, tactile states */
+:where(button,a){-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+:where(button,a):focus-visible{outline:2px solid var(--caramel);outline-offset:4px}
+:where(button):disabled{cursor:not-allowed;opacity:.45}
+.cut-button{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:13px 25px;border:1px solid var(--caramel);border-radius:0;background:var(--caramel);color:#fff;font-size:11px;font-weight:500;letter-spacing:.14em;line-height:1;text-transform:uppercase;transition:background-color .25s ease,border-color .25s ease,color .25s ease,transform .25s ease}
+.cut-button:hover{background:var(--espresso);border-color:var(--espresso);color:var(--cream);transform:translateY(-1px)}
+.cut-button:active{transform:translateY(0)}
+.cut-button.dark{background:var(--espresso);border-color:var(--espresso);color:var(--cream)}
+.cut-button.dark:hover{background:var(--caramel);border-color:var(--caramel);color:#fff}
+.text-link{display:inline-flex;align-items:center;min-height:40px;border-bottom:1px solid currentColor;padding:4px 0 8px;color:inherit;font-size:11px;font-weight:500;letter-spacing:.13em;line-height:1.2;text-transform:uppercase;transition:color .25s ease,border-color .25s ease}
+.text-link:hover{color:var(--caramel);border-color:var(--caramel)}
+.text-link i{display:none}
+.language-toggle,.menu-toggle{min-height:36px;padding:8px 0;color:inherit;font-weight:500;line-height:1;transition:color .25s ease}
+.language-toggle:hover,.menu-toggle:hover{color:var(--caramel)}
+.close-sheet{width:40px;height:40px;padding:0;display:grid;place-items:center;line-height:1;transition:color .25s ease,background-color .25s ease}
+.close-sheet:hover{background:rgba(239,231,219,.1);color:var(--caramel)}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.cut-button,.text-link,.language-toggle,.menu-toggle,.close-sheet{transition:none}.cut-button:hover{transform:none}}
+@media(max-width:800px){.cut-button{min-height:46px;padding-inline:22px}.text-link{min-height:38px}.menu-toggle{padding:10px 0}.mobile-sheet{overscroll-behavior:contain}}
